@@ -14,36 +14,19 @@ function draw() {
   ctx.fillStyle = "#eee";
   ctx.fillRect(0, 0, cnv.width, cnv.height);
 
-  // Circle Line Width
+  // Draw Olympic Rings
   ctx.lineWidth = 8;
+  strokeCircle(100, 100, 50, "blue");
+  strokeCircle(160, 150, 50, "yellow");
+  strokeCircle(220, 100, 50, "black");
+  strokeCircle(280, 150, 50, "blue");
+  strokeCircle(340, 100, 50, "red");
+}
 
-  // Blue Ring - Center: (100, 100) Radius: 50
-  ctx.strokeStyle = "blue";
+// Draw a stroke circle at center (x, y) with radius r
+function strokeCircle(x, y, r, color) {
+  ctx.strokeStyle = color;
   ctx.beginPath();
-  ctx.arc(100, 100, 50, 0, 2 * Math.PI);
-  ctx.stroke();
-
-  // Yellow Ring - Center: (160, 150) Radius: 50
-  ctx.strokeStyle = "yellow";
-  ctx.beginPath();
-  ctx.arc(160, 150, 50, 0, 2 * Math.PI);
-  ctx.stroke();
-
-  // Black Ring - Center: (220, 100) Radius: 50
-  ctx.strokeStyle = "black";
-  ctx.beginPath();
-  ctx.arc(220, 100, 50, 0, 2 * Math.PI);
-  ctx.stroke();
-
-  // Blue Ring - Center: (280, 150) Radius: 50
-  ctx.strokeStyle = "green";
-  ctx.beginPath();
-  ctx.arc(280, 150, 50, 0, 2 * Math.PI);
-  ctx.stroke();
-
-  // Red Ring - Center: (340, 100) Radius: 50
-  ctx.strokeStyle = "red";
-  ctx.beginPath();
-  ctx.arc(340, 100, 50, 0, 2 * Math.PI);
+  ctx.arc(x, y, r, 0, 2 * Math.PI);
   ctx.stroke();
 }
